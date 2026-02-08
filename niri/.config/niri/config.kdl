@@ -86,6 +86,11 @@ output "DP-1" {
     focus-at-startup
     variable-refresh-rate
 }
+
+output "eDP-1" {
+    mode "2880x1800@60.001"
+    scale 1.75
+}
 /-output "eDP-1" {
     // Uncomment this line to disable this output.
      off
