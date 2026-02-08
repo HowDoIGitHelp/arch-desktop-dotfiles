@@ -290,7 +290,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "niriusd"
-spawn-sh-at-startup "swaybg -i ~/Pictures/cloudslandscape.png -m fill"
+spawn-sh-at-startup "swaybg -i ~/dotfiles/resources/cloudslandscape.png -m fill"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "XDG_CURRENT_DESKTOP=niri"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
