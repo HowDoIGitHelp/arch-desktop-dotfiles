@@ -358,6 +358,11 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="floorp"
+    default-column-width { proportion 1.0; }
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
