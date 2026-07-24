@@ -24,10 +24,10 @@ input {
         // Enable numlock on startup, omitting this setting disables it.
         numlock
     }
-    tablet {
-        map-to-output "eDP-1"
-        calibration-matrix 1.0 0.0 0.0 0.0 0.63 0.0
-    }
+//    tablet {
+//        map-to-output "DP-1"
+//        calibration-matrix 1.0 0.0 0.0 0.0 0.63 0.0
+//    }
 
     // Next sections include libinput settings.
     // Omitting settings disables them, or leaves them at their default values.
@@ -91,10 +91,10 @@ output "DP-1" {
     variable-refresh-rate
 }
 
-output "eDP-1" {
-    mode "2880x1800@60.001"
-    scale 1.75
-}
+// output "eDP-1" {
+//     mode "2880x1800@60.001"
+//     scale 1.75
+// }
 /-output "eDP-1" {
     // Uncomment this line to disable this output.
      off
@@ -683,6 +683,8 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
+
+include "local_machine.kdl"
 
 // debug {
 //    disable-cursor-plane
