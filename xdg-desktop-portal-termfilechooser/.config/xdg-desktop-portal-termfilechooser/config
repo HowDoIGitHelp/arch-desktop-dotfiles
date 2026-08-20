@@ -1,5 +1,5 @@
 [filechooser]
 cmd=/home/rub/.local/bin/yazi-wrapper.sh
-default_dir=$HOME
+default_dir=$HOME/Downloads
 open_mode=suggested
 save_mode=last
