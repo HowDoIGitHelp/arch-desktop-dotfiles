@@ -1,96 +1,277 @@
-@define-color foreground #ffffff;
-@define-color background #000000;
+/* Keyframes */
+
+@keyframes blink-critical {
+	to {
+		/*color: @white;*/
+		background-color: @critical;
+	}
+}
 
 
+/* Styles */
 
+/* Colors (gruvbox) */
+@define-color black #000000;
+@define-color red #f7768e;
+@define-color green #9ece6a;
+@define-color yellow #e0af68;
+@define-color blue #7aa2f7;
+@define-color purple #bb9af7;
+@define-color aqua #7dcfff;
+@define-color gray #565f89;
+@define-color brgray #414868;
+@define-color brred #ff7a93;
+@define-color brgreen #b9f27c;
+@define-color bryellow #ff9e64;
+@define-color brblue #7da6ff;
+@define-color brpurple #c0caf5;
+@define-color braqua #0db9d7;
+@define-color white #ffffff;
+@define-color bg2 #24283b;
+
+@define-color warning  @bryellow;
+@define-color critical @red;
+@define-color mode @black;
+@define-color unfocused @bg2;
+@define-color focused @braqua;
+@define-color inactive @purple;
+@define-color sound @brpurple;
+@define-color network @purple;
+@define-color memory @braqua;
+@define-color cpu @green;
+@define-color temp @brgreen;
+@define-color layout @bryellow;
+@define-color battery @aqua;
+@define-color date @black;
+@define-color time @white;
+
+/* Reset all styles */
 * {
-  background-color: @background;
-  color: @foreground;
-
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  font-family: 'JetBrainsMono Nerd Font';
-  font-size: 12px;
+	border: none;
+	border-radius: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+	text-shadow: none;
+	icon-shadow: none;
 }
 
-.modules-left {
-  margin-left: 8px;
+/* The whole bar */
+#waybar {
+	background: rgba(0, 0, 0, 0); /* #282828e0 */
+	color: @white;
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: 10pt;
+	/*font-weight: bold;*/
 }
 
-.modules-right {
-  margin-right: 8px;
-}
-
-#workspaces button {
-  all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 9px;
-}
-
-#workspaces button.empty {
-  opacity: 0.5;
-}
-
-#cpu,
+/* Each module */
 #battery,
+#clock,
+#cpu,
+#language,
+#memory,
+#mode,
+#network,
 #pulseaudio,
-#custom-omarchy,
-#custom-screenrecording-indicator,
-#custom-update {
-  min-width: 12px;
-  margin: 0 7.5px;
+#temperature,
+#tray,
+#backlight,
+#idle_inhibitor,
+#disk,
+#window,
+#user,
+#custom-arch,
+#mpris {
+	padding-left: 8pt;
+	padding-right: 8pt;
 }
 
-#tray {
-  margin-right: 16px;
+/* Each critical module */
+#mode,
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#battery.critical.discharging {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-name: blink-critical;
+	animation-duration: 1s;
 }
 
-#bluetooth {
-  margin-right: 17px;
+/* Each warning */
+#network.disconnected,
+#memory.warning,
+#cpu.warning,
+#temperature.warning,
+#battery.warning.discharging {
+	color: @warning;
+}
+
+/* And now modules themselves in their respective order */
+
+/* Current sway mode (resize etc) */
+#mode {
+	color: @white;
+	background: @mode;
+}
+
+/* Workspaces stuff */
+#workspaces button {
+	/*font-weight: bold;*/
+	padding-left: 2pt;
+	padding-right: 2pt;
+	color: @white;
+	background: @unfocused;
+}
+
+/* Inactive (on unfocused output) */
+#workspaces button.visible {
+	color: @white;
+	background: @inactive;
+}
+
+/* Active (on focused output) */
+#workspaces button.focused {
+	color: @black;
+	background: @focused;
+}
+
+/* Contains an urgent window */
+#workspaces button.urgent {
+	color: @black;
+	background: @warning;
+}
+
+/* Style when cursor is on the button */
+#workspaces button:hover {
+	background: @black;
+	color: @white;
+}
+
+#custom-arch {
+    background: @black;
+    color: @white;
+}
+
+#window {
+    background: @white;
+    color: @black;
+}
+
+#pulseaudio {
+	background: @sound;
+	color: @black;
 }
 
 #network {
-  margin-right: 13px;
+	background: @network;
+	color: @white;
 }
 
-#custom-expand-icon {
-  margin-right: 18px;
+#memory {
+	background: @memory;
+	color: @black;
 }
 
-tooltip {
-  padding: 2px;
+#cpu {
+	background: @cpu;
+	color: @white;
 }
 
-#custom-update {
-  font-size: 10px;
+#temperature {
+	background: @temp;
+	color: @black;
 }
 
-#clock {
-  margin-left: 8.75px;
+#language {
+	background: @layout;
+	color: @black;
 }
 
-.hidden {
-  opacity: 0;
+#battery {
+	background: @battery;
+	color: @white;
 }
 
-#custom-screenrecording-indicator {
-  min-width: 12px;
-  margin-left: 5px;
-  font-size: 10px;
-  padding-bottom: 1px;
+#tray {
+	background: @date;
 }
 
-#custom-screenrecording-indicator.active {
-  color: #a55555;
+#clock.date {
+	background: @date;
+	color: @white;
 }
 
-#custom-voxtype {
-  min-width: 12px;
-  margin: 0 0 0 7.5px;
+#clock.time {
+	background: @time;
+	color: @black;
 }
 
-#custom-voxtype.recording {
-  color: #a55555;
+#custom-arrow1 {
+	font-size: 11pt;
+	color: @time;
+	background: @date;
+}
+
+#custom-arrow2 {
+	font-size: 11pt;
+	color: @date;
+	background: @cpu;
+}
+
+#custom-arrow3 {
+	font-size: 11pt;
+	color: @layout;
+	background: @battery;
+}
+
+#custom-arrow4 {
+	font-size: 11pt;
+	color: @battery;
+	background: @temp;
+}
+
+#custom-arrow5 {
+	font-size: 11pt;
+	color: @temp;
+	background: @cpu;
+}
+
+#custom-arrow6 {
+	font-size: 11pt;
+	color: @cpu;
+	background: @memory;
+}
+
+#custom-arrow7 {
+	font-size: 11pt;
+	color: @memory;
+	background: @network;
+}
+
+#custom-arrow8 {
+	font-size: 11pt;
+	color: @network;
+	background: @sound;
+}
+
+#custom-arrow9 {
+	font-size: 11pt;
+	color: @sound;
+	background: transparent;
+}
+
+#custom-arrow10 {
+	font-size: 11pt;
+	color: @white;
+	background: transparent;
+}
+
+#custom-arrow11 {
+	font-size: 11pt;
+	color: @black;
+	background: @white;
 }
