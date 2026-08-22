@@ -106,10 +106,10 @@
 	"niri/window": {
     	"format": " {app_id} — {title}",
     	"rewrite": {
-    		" (.*) — Ablaze Floorp": "󰖟 $1",
+    		" floorp — (.*) — Ablaze Floorp": "󰖟 $1",
     		" foot — (.*)": "  $1",
     		" persistentfoot — (.*)": "  $1",
-    		" (.*) — (.*)": " $2"
+    		" (com\\..*) — (.*)$$": " $2"
     	}
     },
 
