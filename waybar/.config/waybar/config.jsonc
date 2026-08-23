@@ -109,12 +109,12 @@
     },
 
     "niri/window": {
-        "format": "   {app_id} — {title} ",
+        "format": "   {app_id} — {title}  ",
         "rewrite": {
-            "   floorp — (.*) — Ablaze Floorp ": "  󰖟 $1 ",
-            "   foot — (.*)" : "    $1 ",
-            "   persistentfoot — (.*) ": "    $1 ",
-            "   (com\\..*) — (.*)$ ": "   $2 "
+            "   floorp — (.*) — Ablaze Floorp  ": "  󰖟 $1  ",
+            "   foot — (.*)" : "    $1",
+            "   persistentfoot — (.*)": "    $1",
+            "   (com\\..*) — (.*)": "   $2"
         }
     },
 
