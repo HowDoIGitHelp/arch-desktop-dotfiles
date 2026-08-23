@@ -35,15 +35,17 @@
 @define-color unfocused @bg2;
 @define-color focused @braqua;
 @define-color inactive @purple;
-@define-color sound @brpurple;
-@define-color network @purple;
+@define-color sound @brgray;
+@define-color network @brgray;
 @define-color memory @braqua;
 @define-color cpu @green;
 @define-color temp @brgreen;
 @define-color layout @bryellow;
 @define-color battery @aqua;
-@define-color date @black;
-@define-color time @white;
+@define-color date @brgreen;
+@define-color time @brgreen;
+@define-color arch @brgreen;
+@define-color window @brgray;
 
 /* Reset all styles */
 * {
@@ -86,6 +88,18 @@
 #mpris {
 	padding-left: 8pt;
 	padding-right: 8pt;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#clock {
+    margin-right: 8px;
+}
+
+#custom-arch {
+    margin-left: 8px;
 }
 
 /* Each critical module */
@@ -152,18 +166,18 @@
 }
 
 #custom-arch {
-    background: @black;
-    color: @white;
+    background: @arch;
+    color: @black;
 }
 
 #window {
-    background: @white;
-    color: @black;
+    background: @window;
+    color: @white;
 }
 
 #pulseaudio {
 	background: @sound;
-	color: @black;
+	color: @white;
 }
 
 #network {
@@ -197,12 +211,13 @@
 }
 
 #tray {
-	background: @date;
+	background: @network;
+    color: @white;
 }
 
 #clock.date {
 	background: @date;
-	color: @white;
+	color: @black;
 }
 
 #clock.time {
@@ -248,7 +263,7 @@
 
 #custom-arrow7 {
 	font-size: 11pt;
-	color: @memory;
+	color: @date;
 	background: @network;
 }
 
@@ -266,12 +281,12 @@
 
 #custom-arrow10 {
 	font-size: 11pt;
-	color: @white;
+	color: @window;
 	background: transparent;
 }
 
 #custom-arrow11 {
 	font-size: 11pt;
-	color: @black;
-	background: @white;
+	color: @arch;
+	background: @window;
 }
