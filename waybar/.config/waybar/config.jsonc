@@ -40,11 +40,11 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-charging-full": " {capacity}%",
-        "format-full": "{icon} {capacity}%",
-        "format-alt": "{icon} {power}W",
+        "format": " {icon}  {capacity}% ",
+        "format-charging": "  {capacity}% ",
+        "format-charging-full": "  {capacity}% ",
+        "format-full": " {icon} {capacity}% ",
+        "format-alt": " {icon} {power}W ",
         "format-icons": [
             "",
             "",
@@ -57,13 +57,13 @@
 
     "clock#time": {
         "interval": 10,
-        "format": "{:%I:%M}",
+        "format": " {:%I:%M} ",
         "tooltip": false
     },
 
     "clock#date": {
         "interval": 20,
-        "format": "{:%I:%M %p %A %b %e}",
+        "format": " {:%I:%M %p %A %b %e} ",
         "tooltip": false
         //"tooltip-format": "{:%e %B %Y}"
     },
@@ -71,8 +71,8 @@
     "cpu": {
         "interval": 5,
         "tooltip": false,
-        "format": " {usage}%",
-        "format-alt": " {load}",
+        "format": "  {usage}% ",
+        "format-alt": "  {load} ",
         "states": {
             "warning": 70,
             "critical": 90
@@ -80,7 +80,7 @@
     },
 
     "custom/arch": {
-        "format": "󰣇 ARCH",
+        "format": " 󰣇 ARCH ",
     },
 
     "sway/language": {
@@ -102,20 +102,20 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "  {essid}",
-        "format-ethernet": "󰈀 {ifname}",
+        "format-wifi": "   {essid} ",
+        "format-ethernet": " 󰈀 {ifname} ",
         "format-disconnected": "No connection",
         "format-alt": "󰈀 {ipaddr}/{cidr}",
         "tooltip": false
     },
 
     "niri/window": {
-        "format": " {app_id} — {title}",
+        "format": "   {app_id} — {title} ",
         "rewrite": {
-            " floorp — (.*) — Ablaze Floorp": "󰖟 $1",
-            " foot — (.*)": "  $1",
-            " persistentfoot — (.*)": "  $1",
-            " (com\\..*) — (.*)$$": " $2"
+            "   floorp — (.*) — Ablaze Floorp ": "  󰖟 $1 ",
+            "   foot — (.*)" : "    $1 ",
+            "   persistentfoot — (.*) ": "    $1 ",
+            "   (com\\..*) — (.*)$ ": "   $2 "
         }
     },
 
@@ -128,8 +128,8 @@
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "{icon}   {volume}%",
+        "format": "  {icon}  {volume}% ",
+        "format-bluetooth": "  {icon}   {volume}% ",
         "format-muted": "",
         "format-icons": {
             "headphone": "",
@@ -153,7 +153,7 @@
         "modules": ["custom/expand-icon", "tray"]
     },
     "custom/expand-icon": {
-        "format": "",
+        "format": "  ",
         "tooltip": false,
         "on-scroll-up": "",
         "on-scroll-down": "",
