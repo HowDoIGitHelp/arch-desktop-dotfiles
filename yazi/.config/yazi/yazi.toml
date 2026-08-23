@@ -1,0 +1,11 @@
+[mgr]
+sort_by = "mtime"
+sort_reverse = true
+ratio = [0, 4, 3]
+linemode = "size"
+
+[opener]
+edit = [
+    { run = "nvim %s", block = true, for = "unix" }
+]
+
