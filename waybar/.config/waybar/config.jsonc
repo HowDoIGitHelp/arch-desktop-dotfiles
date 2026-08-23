@@ -128,8 +128,8 @@
 
     "pulseaudio": {
         "format": "  {icon}  {volume}% ",
-        "format-bluetooth": "  {icon}   {volume}% ",
-        "format-muted": "󰝟",
+        "format-bluetooth": "  󰂰 {volume}% ",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -137,7 +137,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["󰖀", "󰕾"]
+            "default": ["", ""]
         },
         "scroll-step": 1,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
