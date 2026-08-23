@@ -10,7 +10,8 @@
     "modules-right": [
         "pulseaudio",
         "network",
-        "tray",
+        "battery",
+        "group/tray-expander",
         "clock#date",
     ],
 
@@ -39,9 +40,8 @@
             "warning": 30,
             "critical": 15
         },
-        "format-time": "{H}:{M:02}",
-        "format": "{icon} {capacity}% ({time})",
-        "format-charging": " {capacity}% ({time})",
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
         "format-charging-full": " {capacity}%",
         "format-full": "{icon} {capacity}%",
         "format-alt": "{icon} {power}W",
@@ -102,7 +102,7 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-wifi": "  {essid}",
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "No connection",
         "format-alt": "󰈀 {ipaddr}/{cidr}",
@@ -128,8 +128,8 @@
     },
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon}  {volume}%",
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}   {volume}%",
         "format-muted": "",
         "format-icons": {
             "headphone": "",
@@ -144,9 +144,25 @@
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "tooltip": false
     },
+    "group/tray-expander": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 600,
+            "children-class": "tray-group-item"
+        },
+        "modules": ["custom/expand-icon", "tray"]
+    },
+    "custom/expand-icon": {
+        "format": "",
+        "tooltip": false,
+        "on-scroll-up": "",
+        "on-scroll-down": "",
+        "on-scroll-left": "",
+        "on-scroll-right": ""
+    },
 
     "tray": {
-        "icon-size": 18
+        "icon-size": 12
         //"spacing": 10
     },
 

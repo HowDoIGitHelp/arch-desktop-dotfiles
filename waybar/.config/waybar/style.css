@@ -41,11 +41,12 @@
 @define-color cpu @green;
 @define-color temp @brgreen;
 @define-color layout @bryellow;
-@define-color battery @aqua;
+@define-color battery @brgray;
 @define-color date @brgreen;
 @define-color time @brgreen;
 @define-color arch @brgreen;
 @define-color window @brgray;
+@define-color tray @brgray;
 
 /* Reset all styles */
 * {
@@ -78,6 +79,7 @@
 #network,
 #pulseaudio,
 #temperature,
+#custom-expand-icon,
 #tray,
 #backlight,
 #idle_inhibitor,
@@ -211,6 +213,11 @@
 }
 
 #tray {
+	background: @network;
+    color: @white;
+}
+
+#custom-expand-icon {
 	background: @network;
     color: @white;
 }
