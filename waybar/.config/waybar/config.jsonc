@@ -11,7 +11,6 @@
         "pulseaudio",
         "network",
         "battery",
-        "group/tray-expander",
         "clock#date",
     ],
 
@@ -35,22 +34,22 @@
     // Modules
 
     "battery": {
-        "interval": 10,
+        "interval": 30,
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": " {icon}  {capacity}% ",
-        "format-charging": "  {capacity}% ",
-        "format-charging-full": "  {capacity}% ",
-        "format-full": " {icon} {capacity}% ",
-        "format-alt": " {icon} {power}W ",
+        "format": " {icon} {capacity}%  ",
+        "format-charging": " 󰂄 {capacity}%  ",
+        "format-charging-full": " 󰂄 {capacity}%  ",
+        "format-full": " {icon} {capacity}%  ",
+        "format-alt": " {icon} {power}W  ",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "󰁻",
+            "󰁽",
+            "󰁿",
+            "󰂁",
+            "󰁹"
         ],
         "tooltip": false
     },
@@ -102,7 +101,7 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "   {essid} ",
+        "format-wifi": " 󰖩  {essid} ",
         "format-ethernet": " 󰈀 {ifname} ",
         "format-disconnected": "No connection",
         "format-alt": "󰈀 {ipaddr}/{cidr}",
@@ -130,7 +129,7 @@
     "pulseaudio": {
         "format": "  {icon}  {volume}% ",
         "format-bluetooth": "  {icon}   {volume}% ",
-        "format-muted": "",
+        "format-muted": "󰝟",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -138,7 +137,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", ""]
+            "default": ["󰖀", "󰕾"]
         },
         "scroll-step": 1,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -153,7 +152,7 @@
         "modules": ["custom/expand-icon", "tray"]
     },
     "custom/expand-icon": {
-        "format": "  ",
+        "format": "   ",
         "tooltip": false,
         "on-scroll-up": "",
         "on-scroll-down": "",
@@ -162,8 +161,8 @@
     },
 
     "tray": {
-        "icon-size": 12
-        //"spacing": 10
+        "icon-size": 12,
+        "spacing": 10
     },
 
     "custom/arrow1": {
