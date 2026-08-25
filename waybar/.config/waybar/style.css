@@ -65,7 +65,7 @@
 	background: rgba(0, 0, 0, 0); /* #282828e0 */
 	color: @white;
 	font-family: "JetBrainsMono Nerd Font";
-	font-size: 11pt;
+	font-size: 10;
 	/*font-weight: bold;*/
 }
 
@@ -90,16 +90,16 @@
 #mpris {
     padding-top: 4px;
     padding-bottom: 4px;
-    margin-top: 9px;
-    margin-bottom: 9px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 #clock {
-    margin-right: 9px;
+    margin-right: 8px;
 }
 
 #custom-arch {
-    margin-left: 9px;
+    margin-left: 8px;
 }
 
 /* Each critical module */
