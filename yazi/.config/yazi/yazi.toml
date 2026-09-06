@@ -8,4 +8,12 @@ linemode = "size"
 edit = [
     { run = "nvim %s", block = true, for = "unix" }
 ]
+browser = [
+    { run = "xdg-open %s", orphan = true, desc = "Open in browser", for = "unix" },
+]
 
+[open]
+prepend_rules = [
+    { url = "*.html", use = "browser" },
+    { url = "*.htm", use = "browser" }
+]
