@@ -6,6 +6,13 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
+environment {
+    WAYLAND_DISPLAY "wayland-1"
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "niri"
+    XDG_RUNTIME_DIR "/run/user/1000"
+}
+
 input {
     keyboard {
         xkb {
@@ -352,6 +359,10 @@ window-rule {
 window-rule {
     match app-id="persistentfoot"
     open-floating true
+    min-height 700
+    min-width 1100
+    max-height 700
+    max-width 1100
 }
 
 window-rule {
@@ -410,8 +421,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Shift+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "/home/rub/.local/bin/toggle-foot.sh"; }
+    Mod+Shift+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "/home/rub/.local/bin/toggle-foot.sh"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+Shift+Y hotkey-overlay-title="Show wayscriber" { spawn "wayscriber" "-a"; }
