@@ -112,7 +112,7 @@
         "format": "   {app_id} — {title}  ",
         "rewrite": {
             "   floorp — (.*) — Ablaze Floorp  ": "  󰖟 $1  ",
-            "   foot — (.*)" : "    $1",
+            "   kitty — (.*)" : "    $1",
             "   persistentfoot — (.*)": "    $1",
             "   (com\\..*) — (.*)": "   $2"
         }
