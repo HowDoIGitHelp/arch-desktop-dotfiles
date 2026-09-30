@@ -103,8 +103,8 @@
         "interval": 5,
         "format-wifi": " 󰖩  {essid} ",
         "format-ethernet": " 󰈀 {ifname} ",
-        "format-disconnected": "No connection",
-        "format-alt": "󰈀 {ipaddr}/{cidr}",
+        "format-disconnected": " No connection ",
+        "format-alt": " 󰈀 {ipaddr}/{cidr} ",
         "tooltip": false
     },
 
